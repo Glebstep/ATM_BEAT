@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Machine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <!-- Смена языка -->
+        <div class="language-selector">
+            <button onclick="setLanguage('en')">English</button>
+            <button onclick="setLanguage('ru')">Русский</button>
+            <button onclick="setLanguage('lt')">Lietuvių</button>
+        </div>
+
+        <!-- Основной ATM-контейнер -->
+        <div class="atm-container">
+            <!-- Приветственный экран -->
+            <div id="welcome-screen" class="screen active">
+                <h1 id="welcome-text">Welcome to the best ATM ever</h1>
+                <p id="insert-card-text">Insert Card for continuing operation</p>
+                <button onclick="showScreen('card-screen')" class="main-button">Card Inserted</button>
+            </div>
+
+            <!-- Экран ввода данных карты -->
+            <div id="card-screen" class="screen">
+                <h1 id="card-entry-text">Enter Card Details</h1>
+                <input type="text" id="card-number" placeholder="Card Number">
+                <input type="password" id="card-password" placeholder="Password">
+                <button onclick="validateCard()" class="main-button">Continue</button>
+                <p id="error-message" class="error-message hidden">Invalid card number or password</p>
+            </div>
+
+            <!-- Меню действий -->
+            <div id="menu-screen" class="screen">
+                <h1 id="menu-title">Menu</h1>
+                <button onclick="checkBalance()" class="menu-button" data-translate="checkBalance">Check Balance</button>
+                <button onclick="withdrawMoneyMenu()" class="menu-button" data-translate="withdrawMoney">Withdraw Money</button>
+                <button onclick="depositMoneyMenu()" class="menu-button" data-translate="depositMoney">Deposit Money</button>
+                <button onclick="showScreen('welcome-screen')" class="menu-button" data-translate="backToMenu">Back to Main Menu</button>
+                
+            </div>
+
+            <!-- Экран проверки баланса -->
+            <div id="balance-screen" class="screen">
+                <h1>Current Balance</h1>
+                <p id="balance-text"></p>
+                <button onclick="showScreen('menu-screen')" class="main-button">Back to Menu</button>
+            </div>
+
+            <!-- Экран снятия денег -->
+            <div id="withdraw-screen" class="screen">
+                <h1>Withdraw Money</h1>
+                <input type="number" id="withdraw-amount" placeholder="Enter amount">
+                <button onclick="withdrawMoney()" class="main-button">Withdraw</button>
+                <button onclick="showScreen('menu-screen')" class="main-button">Back to Menu</button>
+            </div>
+
+            <!-- Экран пополнения баланса -->
+            <div id="deposit-screen" class="screen">
+                <h1>Deposit Money</h1>
+                <input type="number" id="deposit-amount" placeholder="Enter amount">
+                <button onclick="depositMoney()" class="main-button">Deposit</button>
+                <button onclick="showScreen('menu-screen')" class="main-button">Back to Menu</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

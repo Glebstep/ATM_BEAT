@@ -1,0 +1,98 @@
+/* Общие стили */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(145deg, #003366, #006699);
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Общий контейнер для центрирования */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Контейнер ATM */
+.atm-container {
+    width: 600px;
+    padding: 30px;
+    background: #002244;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+/* Языковой переключатель */
+.language-selector {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Промежуток между кнопками */
+    margin-bottom: 10px;
+}
+
+.language-selector button {
+    background: #004488;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.language-selector button:hover {
+    background: #0066cc;
+}
+
+/* Экраны */
+.screen {
+    display: none;
+}
+
+.screen.active {
+    display: block;
+}
+
+/* Кнопки */
+.main-button,
+.menu-button {
+    background: #0099ff;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    margin: 10px 0;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    width: 80%;
+    transition: background-color 0.3s;
+}
+
+.main-button:hover,
+.menu-button:hover {
+    background: #0077cc;
+}
+
+input {
+    margin: 15px 0;
+    padding: 15px;
+    width: calc(80% - 30px);
+    border-radius: 10px;
+    border: none;
+    font-size: 18px;
+}
+
+/* Сообщения об ошибках */
+.error-message {
+    color: red;
+    font-size: 16px;
+    margin-top: 10px;
+}
